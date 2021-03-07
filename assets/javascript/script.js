@@ -16,31 +16,11 @@ var highScoreEl = document.getElementById("highScore");
 var goBackEl = document.getElementById("goBack");
 var clearEl = document.getElementById("clear");
 
-saveHighScoreEl.addEventListener("click", function() {
-  let initials = initialsEl.value;
-  highScore.push({ initials: initials, highScore: timeLeft });
-  localStorage.setItem("highScore", JSON.stringify(highScore));
-  highScoreEl.classList.remove("hide");
-  endQuizEl.classList.add("hide");
 
-  for (let i = 0; i < highScore.length; i++) {
-    var p = document.createElement("p");
-    p.textContent = highScore[i].highScore + " - " + highScore[i].initials;
-    highScoreEl.append(p);
-  }
-});
-
-goBackEl.addEventListener("click", function() {
-  location.reload();
-});
-
-clearEl.addEventListener("click", function() {
-  localStorage.clear();
-});
 
 const questions = [
   {
-    question: "How do you select an element based on its css class?",
+    question: "How do you select an element based on its CSS class?",
     option: [
       "getElementById",
       "getElementByClass",
@@ -61,9 +41,14 @@ const questions = [
     answer: 0,
   },
   {
-    question: "Which option is NOT an example of a javascript loop ",
+    question: "Which option is NOT an example of a JavaScript loop ",
     option: ["for", "while", "and", "do/while"],
     answer: 2,
+  },
+  {
+    question: "In HTML, what tags are used to insert JavaScript?",
+    option: ["link", "script", "src", "alt"],
+    answer: 1,
   },
 ];
 
@@ -113,7 +98,6 @@ function qAndA() {
 }
 
 startQuiz.addEventListener("click", function () {
-  console.log("startQuiz"); // comment out later'
   landingPage.classList.add("hide");
   questionsEl.classList.remove("hide");
   startTimer();
@@ -142,9 +126,35 @@ function renderLastRegistered() {
   renderLastRegistered();
 }
 
+saveHighScoreEl.addEventListener("click", function () {
+  let initials = initialsEl.value;
+  highScore.push({ initials: initials, highScore: timeLeft });
+  localStorage.setItem("highScore", JSON.stringify(highScore));
+  highScoreEl.classList.remove("hide");
+  endQuizEl.classList.add("hide");
+
+  for (let i = 0; i < highScore.length; i++) {
+    var p = document.createElement("p");
+    p.textContent = highScore[i].highScore + " - " + highScore[i].initials;
+    highScoreEl.append(p);
+  }
+});
+
+goBackEl.addEventListener("click", function () {
+  location.reload();
+});
+
+clearEl.addEventListener("click", function () {
+  localStorage.clear();
+});
+
 // Create end quiz
+endQuiz.addEventListener("click", function(){
+  
+});
+
 // Create way to add initials
 // Stop clock at the end of a question
-// When clock stops, time reemaining is high score
+// When clock stops, time remaining is high score
 // show textbox to enter initials
 // Time remaining goes into local storage as high score

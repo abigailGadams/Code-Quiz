@@ -4,35 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Code Quiz</title>
   </head>
-  <body class = "main-page">
+  <body class="main-page">
     <div class="timer text-center">
-         <p id="timeLeft"></p>
-    </div>
-    
-    <div class="landing-page" id = "landingPage" >
-      <h1>Coding Quiz Challenge</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem soluta iure illo? Molestias, fugit atque natus aspernatur tempore dicta ipsa asperiores nemo! Doloribus incidunt nesciunt ipsa reprehenderit obcaecati minima blanditiis.</p>
-      <button id = "startBtn" class="btn">Start Quiz!</button>
-    <!-- Hide and Show Based on which one is relevant -->
+      <p id="timeLeft"></p>
     </div>
 
-    <div class="question-and-answers hide" id = "questions">
-       
+    <div class="landing-page" id="landingPage">
+      <div class = "header">
+        <h1>Coding Quiz Challenge</h1>
+        <h4>Are you ready to test your knowledge of JavaScript Fundamentals?</h4>
+      </div>
+      <div class="btn-container">
+        <button id="startBtn" class="btn">Start Quiz!</button>
+      </div>
+      <!-- Hide and Show Based on which one is relevant -->
     </div>
 
-    <div id="endQuiz" class = "hide">
-      <input type="text" id = "initials">
-      <button id = "save-highScore">Submit Highscore</button>
+    <div class="question-and-answers hide" id="questions"></div>
+
+    <div id="endQuiz" class="hide">
+      <input type="text" id="initials" />
+      <button id="save-highScore">Enter Initials To See Your Highscore!</button>
     </div>
 
-    <div id = "highScore" class = "hide">
-         <button id="goBack">Go Back</button> 
-         <button id="clear">Clear History</button>
+    <div id="highScore" class="hide">
+      <h2>HIGHSCORES</h2>
+      <div class="btn-container">
+        <button id="goBack" class="btn">Go Back</button>
+        <button id="clear" class="btn">Clear History</button>
+      </div>
+      
     </div>
     <!--
     Buttons
