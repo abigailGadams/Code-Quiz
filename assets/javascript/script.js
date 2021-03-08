@@ -16,8 +16,6 @@ var highScoreEl = document.getElementById("highScore");
 var goBackEl = document.getElementById("goBack");
 var clearEl = document.getElementById("clear");
 
-
-
 const questions = [
   {
     question: "How do you select an element based on its CSS class?",
@@ -91,7 +89,9 @@ function qAndA() {
       let correctIndex = questions[questionIndex].answer;
       let correctAnswer = questions[questionIndex].option[correctIndex];
       console.log(text, correctAnswer);
-
+      if (text != correctAnswer) {
+        timeLeft = timeLeft - 5;
+      }
       questionIndex++;
     });
   }
@@ -132,7 +132,8 @@ saveHighScoreEl.addEventListener("click", function () {
 
   for (let i = 0; i < highScore.length; i++) {
     var p = document.createElement("p");
-    p.textContent = highScore[i].highScore + " seconds ~ " + highScore[i].initials;
+    p.textContent =
+      highScore[i].highScore + " seconds ~ " + highScore[i].initials;
     highScoreEl.append(p);
     // document.getElementById("demo").innerHTML = highScore["0:i"];
   }
@@ -147,9 +148,6 @@ clearEl.addEventListener("click", function () {
 });
 
 // Create end quiz
-endQuiz.addEventListener("click", function(){
-});
-
+endQuiz.addEventListener("click", function () {});
 
 // Stop clock at the end of a question
-
