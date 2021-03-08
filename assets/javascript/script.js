@@ -90,6 +90,7 @@ function qAndA() {
       let correctAnswer = questions[questionIndex].option[correctIndex];
       console.log(text, correctAnswer);
       if (text != correctAnswer) {
+        alert('Sorry, wrong answer!');
         timeLeft = timeLeft - 5;
       }
       questionIndex++;
