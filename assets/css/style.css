@@ -1,0 +1,151 @@
+* {
+  margin: 2px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font: 24px monospace;
+  font-size: 2vw;
+}
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.main-page {
+  background-color: cornflowerblue;
+}
+
+.main-image {
+  max-width: 80%;
+  height: 50%;
+  max-width: 50vw;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 3px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display:-moz-inline-stack
+}
+
+h1,
+h2 {
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 100px;
+  font-size: 7vw;
+}
+
+h4 {
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 5px;
+  font-size:2vw;
+}
+
+.header {
+  bottom: 20px;
+  position: relative center;
+}
+
+#questions {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  background-color: black;
+  color: whitesmoke;
+  border-radius: 5px;
+  border-style: outset;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  float: center bottom;
+  margin: 5px;
+  padding: 5px;
+}
+
+.optionBtn {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.answers {
+  display: inline-block;
+}
+
+.landing-page .btn {
+  position: fixed;
+  flex-direction: row;
+  flex-wrap: wrap;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 50px;
+  float: bottom;
+  padding: 10px;
+}
+
+.btn-container {
+  position: fixed;
+  flex-direction: row;
+  flex-wrap: wrap;
+  top: 85%;
+  left: 50%;
+}
+
+.container {
+  background-color: black;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 5vh;
+  display: flex;
+}
+
+#save-highscore.btn {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.993);
+  font-size: 24px;
+  padding: 10px;
+}
+
+.highscore-title {
+  text-align: center;
+}
+
+p#timeLeft {
+  position: relative;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 6px;
+}
+
+p.copyright {
+  size: 1vw;
+}
