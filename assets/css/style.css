@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 2px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -18,20 +18,20 @@
 }
 
 .main-image {
-    max-width: 100vh;   
-    margin: 5vh;
-    height: auto; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    border-radius: 3px;
+  max-width: 100vh;
+  margin: 5vh;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 3px;
 }
 
 h1,
 h2 {
   text-align: center;
-  text-decoration-thickness: 10px;
+  /* text-decoration-thickness: 10px; */
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 100px;
 }
@@ -42,11 +42,17 @@ h4 {
   text-align: center;
 }
 
-
 .header {
-    bottom: 20px;
-    position: relative center;
-  }
+  bottom: 20px;
+  position: relative center;
+}
+
+#questions {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .btn {
   background-color: black;
@@ -58,7 +64,19 @@ h4 {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   float: center bottom;
-  margin-top: auto;
+  margin: 5px;
+  padding: 5px;
+}
+
+.optionBtn {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.answers {
+  display: inline-block;
 }
 
 .landing-page .btn {
@@ -71,30 +89,58 @@ h4 {
   flex-wrap: wrap;
   float: bottom;
   padding: 10px;
-  margin-top:325px;
+  margin-top: 325px;
 }
 
 .btn-container {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 50px;
   flex-direction: row;
   flex-wrap: wrap;
+  float: bottom;
   padding: 10px;
-  margin: top 2px bottom 2px;
+  margin-top: 325px;
+}
 
+.container {
+  background-color: black;
+  max-width: 60%;
+  height: auto;
+  padding: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#save-highscore.btn{
+    padding:10px;
+    background-color: rgba(255, 255, 255, 0.993);
+    font-size:24px;
+    padding:10px;
 }
 
 .highscore-title {
-    text-align: center;
+  text-align: center;
+}
+
+p#timeLeft {
+  position: relative;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-	color: rgba(255,255,255,0.85);
-	border-bottom-right-radius: 6px;
-	border-top-left-radius: 0px;
-	border-bottom-left-radius: 6px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 6px;
 }
-

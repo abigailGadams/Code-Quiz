@@ -8,7 +8,7 @@ var endQuizEl = document.getElementById("endQuiz");
 var highScore = localStorage.getItem("highScore")
   ? JSON.parse(localStorage.getItem("highScore"))
   : [];
-console.log(highScore);
+// console.log(highScore);
 var initialsEl = document.getElementById("initials");
 var saveHighScoreEl = document.getElementById("save-highScore");
 var highScoreEl = document.getElementById("highScore");
@@ -53,7 +53,7 @@ const questions = [
 ];
 
 // Creating timer where each questions is 15 seconds (array size *15)
-var timeLeft = questions.length * 15;
+var timeLeft = questions.length * 10;
 var timeId = "";
 
 // Need global index to move through questions array
@@ -75,11 +75,11 @@ function startTimer() {
 function qAndA() {
   questionsEl.innerHTML = `
      <h3>${questions[questionIndex].question}</h3>
-     <ul>
-       <li><button class = "optionBtn"> ${questions[questionIndex].option[0]}</button></li>
-       <li><button class = "optionBtn">${questions[questionIndex].option[1]}</button></li>
-       <li><button class = "optionBtn">${questions[questionIndex].option[2]}</button></li>
-       <li><button class = "optionBtn">${questions[questionIndex].option[3]}</button></li>
+     <ul class = "answers" >
+       <button class = "optionBtn"> ${questions[questionIndex].option[0]}</button>
+       <button class = "optionBtn">${questions[questionIndex].option[1]}</button>
+       <button class = "optionBtn">${questions[questionIndex].option[2]}</button>
+       <button class = "optionBtn">${questions[questionIndex].option[3]}</button>
 
      </ul>
 
@@ -103,28 +103,24 @@ startQuiz.addEventListener("click", function () {
   startTimer();
 });
 
-// Want to stop at each page and increment with every click
-// i++ with each click
-//local storage through an array
-// Save email and password to localStorage using `setItem()`
-function renderLastRegistered() {
-  // Retrieve the last email and password from localStorage using `getItem()`
-  // NEED TO SAVE AN ARRAY OF HIGHSCORES
-  // json.stringify array when setting item
-  // json.parse it when getting item out
-  var highscores = localStorage.getItem("highscores") || []; // if looking at highscores and doesnt exist -> set to an array
-  var password = localStorage.getItem("password");
+// function renderLastRegistered() {
+//   // Retrieve the last email and password from localStorage using `getItem()`
+//   // NEED TO SAVE AN ARRAY OF HIGHSCORES
+//   // json.stringify array when setting item
+//   // json.parse it when getting item out
+//   var highscores = localStorage.getItem("highscores") || []; // if looking at highscores and doesnt exist -> set to an array
+//   var password = localStorage.getItem("password");
 
-  var optionA = document.querySelector("#A");
-  var optionB = document.querySelector("#B");
-  var optionC = document.querySelector("#C");
-  var optionD = document.querySelector("#D");
+//   var optionA = document.querySelector("#A");
+//   var optionB = document.querySelector("#B");
+//   var optionC = document.querySelector("#C");
+//   var optionD = document.querySelector("#D");
 
-  localStorage.setItem("email", email);
-  localStorage.setItem("password", password);
-  // Render the last registered email and password
-  renderLastRegistered();
-}
+//   localStorage.setItem("email", email);
+//   localStorage.setItem("password", password);
+//   // Render the last registered email and password
+//   renderLastRegistered();
+// }
 
 saveHighScoreEl.addEventListener("click", function () {
   let initials = initialsEl.value;
@@ -132,11 +128,13 @@ saveHighScoreEl.addEventListener("click", function () {
   localStorage.setItem("highScore", JSON.stringify(highScore));
   highScoreEl.classList.remove("hide");
   endQuizEl.classList.add("hide");
+  timeLeftEl.classList.add("hide");
 
   for (let i = 0; i < highScore.length; i++) {
     var p = document.createElement("p");
-    p.textContent = highScore[i].highScore + " - " + highScore[i].initials;
+    p.textContent = highScore[i].highScore + " seconds ~ " + highScore[i].initials;
     highScoreEl.append(p);
+    // document.getElementById("demo").innerHTML = highScore["0:i"];
   }
 });
 
@@ -150,11 +148,8 @@ clearEl.addEventListener("click", function () {
 
 // Create end quiz
 endQuiz.addEventListener("click", function(){
-  
 });
 
-// Create way to add initials
+
 // Stop clock at the end of a question
-// When clock stops, time remaining is high score
-// show textbox to enter initials
-// Time remaining goes into local storage as high score
+
