@@ -64,7 +64,13 @@ function startTimer() {
       clearInterval(timeId);
       questionsEl.classList.add("hide");
       endQuizEl.classList.remove("hide");
-    } else {
+    } else if (timeLeft == 0 | timeLeft <= 0) {
+      clearInterval(timeId);
+      questionsEl.classList.add("hide");
+      endQuizEl.classList.remove("hide");
+      timeLeftEl.classList.add("hide");
+    }
+    else {
       qAndA();
     }
   }, 1000);
@@ -90,9 +96,10 @@ function qAndA() {
       let correctAnswer = questions[questionIndex].option[correctIndex];
       console.log(text, correctAnswer);
       if (text != correctAnswer) {
-        alert('Sorry, wrong answer!');
+        alert("Sorry, wrong answer!");
         timeLeft = timeLeft - 5;
       }
+
       questionIndex++;
     });
   }
@@ -103,25 +110,6 @@ startQuiz.addEventListener("click", function () {
   questionsEl.classList.remove("hide");
   startTimer();
 });
-
-// function renderLastRegistered() {
-//   // Retrieve the last email and password from localStorage using `getItem()`
-//   // NEED TO SAVE AN ARRAY OF HIGHSCORES
-//   // json.stringify array when setting item
-//   // json.parse it when getting item out
-//   var highscores = localStorage.getItem("highscores") || []; // if looking at highscores and doesnt exist -> set to an array
-//   var password = localStorage.getItem("password");
-
-//   var optionA = document.querySelector("#A");
-//   var optionB = document.querySelector("#B");
-//   var optionC = document.querySelector("#C");
-//   var optionD = document.querySelector("#D");
-
-//   localStorage.setItem("email", email);
-//   localStorage.setItem("password", password);
-//   // Render the last registered email and password
-//   renderLastRegistered();
-// }
 
 saveHighScoreEl.addEventListener("click", function () {
   let initials = initialsEl.value;

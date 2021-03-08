@@ -23,16 +23,17 @@ p {
 }
 
 .main-image {
-  max-width: 100vh;
-  margin: 5vh;
-  height: auto;
-  top: 50%;
+  max-width: 80%;
+  height: 50%;
+  max-width: 50vw;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
   border-radius: 3px;
   flex-direction: row;
   flex-wrap: wrap;
+  display:-moz-inline-stack
 }
 
 h1,
@@ -106,8 +107,6 @@ h4 {
   position: fixed;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: flex-end;
-  display: flex; */
   top: 85%;
   left: 50%;
 }
