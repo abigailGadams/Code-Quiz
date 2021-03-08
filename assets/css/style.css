@@ -17,6 +17,17 @@
   background-color: cornflowerblue;
 }
 
+.main-image {
+    max-width: 100vh;   
+    margin: 5vh;
+    height: auto; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 3px;
+}
+
 h1,
 h2 {
   text-align: center;
@@ -46,7 +57,7 @@ h4 {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  float: center;
+  float: center bottom;
   margin-top: auto;
 }
 
@@ -55,19 +66,35 @@ h4 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 16px 30px;
+  padding: 50px 50px;
   flex-direction: row;
   flex-wrap: wrap;
   float: bottom;
   padding: 10px;
-  margin-top:200px;
+  margin-top:325px;
 }
 
 .btn-container {
-  position: relative center;
+  position: fixed;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
-  margin-top:30px;
+  margin: top 2px bottom 2px;
+
+}
+
+.highscore-title {
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	color: rgba(255,255,255,0.85);
+	border-bottom-right-radius: 6px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 6px;
 }
 
