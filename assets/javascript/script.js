@@ -29,6 +29,12 @@ const questions = [
   },
   {
     question:
+      "What JS object holds key-value pairs and remembers the original insertion order of the keys?",
+    option: ["function", "map", "object", "console.log"],
+    answer: 1,
+  },
+  {
+    question:
       "Which keyword allows you to assign a value, but does not allow value reassignment?",
     option: ["let", "get", "var", "const"],
     answer: 3,
@@ -64,13 +70,12 @@ function startTimer() {
       clearInterval(timeId);
       questionsEl.classList.add("hide");
       endQuizEl.classList.remove("hide");
-    } else if (timeLeft == 0 | timeLeft <= 0) {
+    } else if ((timeLeft == 0) | (timeLeft <= 0)) {
       clearInterval(timeId);
       questionsEl.classList.add("hide");
       endQuizEl.classList.remove("hide");
       timeLeftEl.classList.add("hide");
-    }
-    else {
+    } else {
       qAndA();
     }
   }, 1000);
